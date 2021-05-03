@@ -1,0 +1,13 @@
+{
+  "renovate-config": {
+    "default": {
+      "extends": ["config:base"],
+      "labels": ["upgrade","bot"],
+      "prHourlyLimit": 99,
+      "rangeStrategy": "auto",
+      "vulnerabilityAlerts": {
+        "labels": ["security"]
+      }
+    }
+  }
+}
