@@ -1,9 +1,15 @@
 {
   "extends": ["config:base"],
-  "labels": ["upgrade","bot"],
-  "prHourlyLimit": 99,
+  "labels": ["bot"],
+  "packageRules": [{
+    "matchUpdateTypes": ["major", "minor", "patch", "bump"],
+    "addLabels": ["update"]
+  }],
   "rangeStrategy": "auto",
+  "rollback": {
+    "addLabels": ["rollback"]
+  },
   "vulnerabilityAlerts": {
-    "labels": ["security"]
+    "addLabels": ["security"]
   }
 }
