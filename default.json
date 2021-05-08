@@ -5,6 +5,9 @@
     "matchUpdateTypes": ["major", "minor", "patch", "bump"],
     "addLabels": ["update"]
   }],
+  "pin": {
+    "addLabels": ["pin"]
+  },
   "rangeStrategy": "auto",
   "rollback": {
     "addLabels": ["rollback"]
