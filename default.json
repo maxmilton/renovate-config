@@ -1,6 +1,10 @@
 {
   "extends": ["config:base"],
   "labels": ["bot"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 5am on the first day of the month"]
+  },
   "packageRules": [{
     "matchUpdateTypes": ["major", "minor", "patch", "bump"],
     "addLabels": ["update"]
