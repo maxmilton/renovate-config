@@ -17,6 +17,8 @@
     "addLabels": ["rollback"]
   },
   "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": null,
     "addLabels": ["security"]
   }
 }
