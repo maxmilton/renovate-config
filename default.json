@@ -11,6 +11,9 @@
   },{
     "matchPackagePatterns": ["ekscss"],
     "groupName": "ekscss monorepo"
+  },{
+    "matchPackageNames": ["babel-preset-solid", "solid-element", "solid-js", "solid-ssr"],
+    "groupName": "solid monorepo"
   }],
   "pin": {
     "addLabels": ["pin"]
