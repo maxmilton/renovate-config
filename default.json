@@ -8,6 +8,9 @@
   "packageRules": [{
     "matchUpdateTypes": ["major", "minor", "patch", "lockFileMaintenance", "bump"],
     "addLabels": ["update"]
+  },{
+    "matchPackagePatterns": ["ekscss"],
+    "groupName": "ekscss monorepo"
   }],
   "pin": {
     "addLabels": ["pin"]
