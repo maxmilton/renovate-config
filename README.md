@@ -21,4 +21,4 @@ MIT; see [LICENCE](https://github.com/MaxMilton/renovate-config/blob/master/LICE
 
 -----
 
-© 2021 [Max Milton](https://maxmilton.com)
+© 2022 [Max Milton](https://maxmilton.com)
