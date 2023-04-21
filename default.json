@@ -3,7 +3,7 @@
   "labels": ["bot"],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 5am on the first day of the month"]
+    "schedule": ["before 5pm on the first day of the month"]
   },
   "packageRules": [{
     "matchUpdateTypes": ["major", "minor", "patch", "lockFileMaintenance", "bump"],
