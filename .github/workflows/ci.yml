@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'npm'
+          # cache: 'npm'
       - run: npm install -g renovate
       - run: renovate-config-validator --strict
       - run: renovate-config-validator --strict default.json
