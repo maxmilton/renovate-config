@@ -1,9 +1,16 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "security:openssf-scorecard",
+    ":preserveSemverRanges",
+    ":maintainLockFilesMonthly"
+  ],
   "labels": ["bot"],
   "lockFileMaintenance": {
+    "extends": ["group:all"],
     "enabled": true,
-    "schedule": ["before 5pm on the first day of the month"]
+    "commitMessageAction": "Update"
   },
   "packageRules": [{
     "matchUpdateTypes": ["major", "minor", "patch", "lockFileMaintenance", "bump"],
@@ -11,9 +18,6 @@
   },{
     "matchPackagePatterns": ["ekscss"],
     "groupName": "ekscss monorepo"
-  },{
-    "matchPackageNames": ["babel-preset-solid", "solid-element", "solid-js", "solid-ssr"],
-    "groupName": "solid monorepo"
   }],
   "pin": {
     "addLabels": ["pin"]
@@ -26,7 +30,7 @@
   },
   "vulnerabilityAlerts": {
     "enabled": true,
-    "schedule": null,
-    "addLabels": ["security"]
+    "schedule": ["at any time"],
+    "addLabels": ["arg0", "security"]
   }
 }
