@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    ":automergeRequireAllStatusChecks",
+    ":automergeStableNonMajor",
+    ":automergeLinters",
+    ":automergeTesters",
+    ":automergeTypes",
+    ":combinePatchMinorReleases"
+  ],
+  "labels": ["auto"]
+}
