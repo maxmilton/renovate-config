@@ -7,18 +7,57 @@ Renovate config preset. See:
 
 ## Usage
 
-Add `.github/renovate.json`:
+Add `.github/renovate.json` (no schedule; updates at any time):
 
 ```json
 {
-  "extends": ["github>maxmilton/renovate-config"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", "github>maxmilton/renovate-config"]
 }
 ```
 
-## Licence
+Or only update once a month (multiple PRs, per package)
 
-MIT; see [LICENCE](https://github.com/MaxMilton/renovate-config/blob/master/LICENCE).
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", "github>maxmilton/renovate-config", "schedule:monthly"]
+}
+```
+
+Or only update once a month (everything in one PR)
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", "github>maxmilton/renovate-config", "config:semverAllMonthly"]
+}
+```
+
+### Special case project presets
+
+Enable automatic merging (of tooling and stable non-major packages):
+
+```json
+"github>maxmilton/renovate-config:auto",
+```
+
+TypeScript app:
+
+```json
+"config:js-app",
+```
+
+TypeScript lib:
+
+```json
+"config:js-lib",
+```
+
+## License
+
+MIT; see [LICENSE](./LICENSE).
 
 -----
 
-© 2022 [Max Milton](https://maxmilton.com)
+© 2025 [Max Milton](https://maxmilton.com)
