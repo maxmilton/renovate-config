@@ -39,7 +39,7 @@ Or only update once a month (everything in one PR)
 
 ### Special case project presets
 
-Enable automatic merging (of tooling and stable non-major packages):
+Enable automatic merging (of tooling and stable non-major package updates):
 
 ```json
 "github>maxmilton/renovate-config:auto",
