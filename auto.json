@@ -8,5 +8,6 @@
     ":automergeTypes",
     ":combinePatchMinorReleases"
   ],
-  "labels": ["auto"]
+  "labels": ["auto"],
+  "platformAutomerge": true
 }
