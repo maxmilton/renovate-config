@@ -7,5 +7,12 @@
     ":automergeTesters",
     ":automergeTypes",
     ":combinePatchMinorReleases"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true
+    }
   ]
 }
