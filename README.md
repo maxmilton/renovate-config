@@ -10,6 +10,24 @@ Renovate config preset. See:
 
 ## Usage
 
+### Recommended
+
+Add `.github/renovate.json`:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    "github>maxmilton/renovate-config",
+    "github>maxmilton/renovate-config:auto",
+    "schedule:monthly"
+  ]
+}
+```
+
+### Targeted
+
 Add `.github/renovate.json` (no schedule; updates at any time):
 
 ```json
