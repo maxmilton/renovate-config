@@ -8,6 +8,9 @@
     ":automergeTypes",
     ":combinePatchMinorReleases"
   ],
+  "lockFileMaintenance": {
+    "automerge": true
+  },
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
