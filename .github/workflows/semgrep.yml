@@ -26,8 +26,7 @@ jobs:
       security-events: write
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - name: semgrep ci
-        run: semgrep ci --sarif-output=semgrep.sarif --exclude-rule=javascript.browser.security.insecure-document-method.insecure-document-method
+      - run: semgrep ci --sarif-output=semgrep.sarif
         env:
           SEMGREP_RULES: p/default p/owasp-top-ten p/cwe-top-25 p/gitleaks p/r2c-security-audit
       - uses: github/codeql-action/upload-sarif@99df26d4f13ea111d4ec1a7dddef6063f76b97e9 # v4
