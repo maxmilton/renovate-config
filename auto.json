@@ -16,6 +16,10 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "automerge": true
+    },
+    {
+      "matchPackageNames": ["@maxmilton/*-config", "@maxmilton/test-utils", "@biomejs/biome", "@playwright/test"],
+      "automerge": true
     }
   ]
 }
