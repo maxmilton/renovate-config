@@ -12,6 +12,7 @@
     "enabled": true,
     "commitMessageAction": "Update"
   },
+  "minimumReleaseAge": "7 days",
   "pin": {
     "addLabels": ["pin"]
   },
@@ -28,6 +29,11 @@
     "addLabels": ["arg0", "security"]
   },
   "packageRules": [
+    {
+      "internalChecksFilter": "strict",
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "7 days"
+    },
     {
       "matchUpdateTypes": ["major", "minor", "patch", "bump", "digest", "lockFileMaintenance"],
       "addLabels": ["update"]
