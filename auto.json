@@ -18,7 +18,15 @@
       "automerge": true
     },
     {
-      "matchPackageNames": ["@maxmilton/*-config", "@maxmilton/test-utils", "@biomejs/biome", "@playwright/test"],
+      "matchPackageNames": [
+        "@maxmilton/*-config",
+        "@maxmilton/test-utils",
+        "@biomejs/biome",
+        "@playwright/test",
+        "happy-dom",
+        "oxfmt",
+        "oxlint-tsgolint"
+      ],
       "automerge": true
     }
   ]
