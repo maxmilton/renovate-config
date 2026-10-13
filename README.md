@@ -78,8 +78,8 @@ TypeScript lib:
 
 ## License
 
-MIT; see [LICENSE](./LICENSE).
+MIT licensed. See [LICENSE](./LICENSE).
 
------
+---
 
 © [Max Milton](https://maxmilton.com)
