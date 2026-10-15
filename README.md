@@ -64,6 +64,12 @@ Enable automatic merging (of tooling and stable non-major package updates):
 "github>maxmilton/renovate-config:auto",
 ```
 
+Enable custom managers allowing manually tagging dependencies with special comments. Extends the ["customManagers:githubActionsVersions"](https://docs.renovatebot.com/presets-customManagers/#custommanagersgithubactionsversions) preset with a way to track `*_SHA256: ...` digests too.
+
+```json
+"github>maxmilton/renovate-config:manual",
+```
+
 TypeScript app:
 
 ```json

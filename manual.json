@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["customManagers:githubActionsVersions"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "GitHub release asset versions and checksums",
+      "managerFilePatterns": ["/^\\.github\\/(?:workflows|actions)\\/.+\\.ya?ml$/"],
+      "matchStrings": [
+        "# renovate: depName=(?<depName>\\S+)\\r?\\n[ \\t]+[A-Z0-9_]+_VERSION:[ \\t]*[\"']?(?<currentValue>v?\\d[0-9A-Za-z.+-]*)[\"']?[ \\t]*(?:#[^\\r\\n]*)?\\r?\\n[ \\t]+[A-Z0-9_]+_SHA256:[ \\t]*[\"']?(?<currentDigest>[a-f0-9]{64})\\b"
+      ],
+      "datasourceTemplate": "github-release-attachments",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["custom.regex"],
+      "minimumReleaseAge": "7 days"
+    }
+  ]
+}
