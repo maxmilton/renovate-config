@@ -3,6 +3,7 @@
   "extends": [
     "config:best-practices",
     "github>maxmilton/renovate-config",
-    "github>maxmilton/renovate-config:auto"
+    "github>maxmilton/renovate-config:auto",
+    "github>maxmilton/renovate-config:manual"
   ]
 }

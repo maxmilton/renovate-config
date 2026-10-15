@@ -18,32 +18,23 @@ permissions: {}
 
 jobs:
   analyze:
-    name: analyze (${{ matrix.language }})
+    name: analyze (actions)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       actions: read
       contents: read
+      packages: read
       security-events: write
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: actions
-          # - language: javascript-typescript
-          #   # https://github.com/GitHubSecurityLab/CodeQL-Community-Packs/blob/main/configs/synthetics.yml
-          #   packs: githubsecuritylab/codeql-javascript-queries
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d # v4
+      - uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
         with:
-          languages: ${{ matrix.language }}
+          languages: actions
           build-mode: none
           queries: security-and-quality
-          # packs: ${{ matrix.packs }}
-          # https://docs.github.com/en/code-security/reference/code-scanning/workflow-configuration-options#extending-codeql-coverage-with-threat-models
           config: |
             threat-models: local
-      - uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d # v4
+      - uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
