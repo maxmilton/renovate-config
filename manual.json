@@ -5,17 +5,35 @@
     {
       "customType": "regex",
       "description": "GitHub release asset versions and checksums",
-      "managerFilePatterns": ["/^\\.github\\/(?:workflows|actions)\\/.+\\.ya?ml$/"],
+      "managerFilePatterns": [
+        "/^\\.github/(?:workflows/[^/]+|actions/.+)\\.ya?ml$/",
+        "/(^|/)action\\.ya?ml$/"
+      ],
       "matchStrings": [
-        "# renovate: depName=(?<depName>\\S+)\\r?\\n[ \\t]+[A-Z0-9_]+_VERSION:[ \\t]*[\"']?(?<currentValue>v?\\d[0-9A-Za-z.+-]*)[\"']?[ \\t]*(?:#[^\\r\\n]*)?\\r?\\n[ \\t]+[A-Z0-9_]+_SHA256:[ \\t]*[\"']?(?<currentDigest>[a-f0-9]{64})\\b"
+        "# renovate: depName=(?<depName>\\S+)[ \\t]*\\r?\\n[ \\t]+[A-Z][A-Z0-9_]*_VERSION:[ \\t]*[\"']?(?<currentValue>v?\\d[0-9A-Za-z.+-]*)[\"']?[ \\t]*(?:#[^\\r\\n]*)?\\r?\\n[ \\t]+[A-Z][A-Z0-9_]*_SHA256:[ \\t]*[\"']?(?<currentDigest>[a-f0-9]{64})[\"']?\\s"
       ],
       "datasourceTemplate": "github-release-attachments",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "depTypeTemplate": "gh-release-asset"
+    },
+    {
+      "customType": "regex",
+      "description": "Docker images in environment variables",
+      "managerFilePatterns": [
+        "/^\\.github/(?:workflows/[^/]+|actions/.+)\\.ya?ml$/",
+        "/(^|/)action\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "(?m)^[ \\t]+[A-Z][A-Z0-9_]*_IMAGE:[ \\t]*[\"']?(?<depName>[^\\s@\"']+?)(?::(?<currentValue>\\w[\\w.-]*))?(?:@(?<currentDigest>sha256:[a-f0-9]+))?[\"']?\\s"
+      ],
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker",
+      "depTypeTemplate": "env-image"
     }
   ],
   "packageRules": [
     {
-      "matchManagers": ["custom.regex"],
+      "matchDepTypes": ["gh-release-asset", "env-image"],
       "minimumReleaseAge": "7 days"
     }
   ]

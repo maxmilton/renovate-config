@@ -36,6 +36,10 @@
       "minimumReleaseAge": "7 days"
     },
     {
+      "matchDatasources": ["docker"],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
       "matchUpdateTypes": ["major", "minor", "patch", "bump", "digest", "lockFileMaintenance"],
       "addLabels": ["update"]
     },
