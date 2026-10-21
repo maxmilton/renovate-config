@@ -1,5 +1,5 @@
 [![CI status](https://badgen.net/github/checks/maxmilton/renovate-config?label=ci)](https://github.com/maxmilton/renovate-config/actions)
-[![Licence](https://badgen.net/github/license/maxmilton/renovate-config)](./LICENSE)
+[![Licence](https://badgen.net/github/license/maxmilton/renovate-config)](LICENSE)
 
 # maxmilton/renovate-config
 
@@ -84,8 +84,4 @@ TypeScript lib:
 
 ## License
 
-MIT licensed. See [LICENSE](./LICENSE).
-
----
-
-© [Max Milton](https://maxmilton.com)
+[MIT License](LICENSE) · © [Max Milton](https://maxmilton.com)
