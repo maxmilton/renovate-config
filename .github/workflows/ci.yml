@@ -28,10 +28,11 @@ jobs:
         with:
           node-version-file: .github/.node-version
       - run: | # zizmor: ignore[adhoc-packages]
-          npm install -g "renovate@${RENOVATE_VERSION}"
+          npm install -g --ignore-scripts "renovate@${RENOVATE_VERSION}"
         env:
           # renovate: datasource=npm depName=renovate
           RENOVATE_VERSION: 44.186.7
+      - run: npm rebuild -g --allow-scripts=re2 re2
       - run: renovate-config-validator --strict
       - run: renovate-config-validator --strict default.json
       - run: renovate-config-validator --strict auto.json
